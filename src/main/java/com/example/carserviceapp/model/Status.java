@@ -58,9 +58,10 @@ public class Status {
 
     public enum StatusName {
         ACCEPTED,
+        TO_DO,
         IN_PROGRESS,
         FINISHED_SUCCESSFUL,
         FINISHED_NOT_SUCCESSFUL,
-        PAID_FOR;
+        PAID_FOR
     }
 }

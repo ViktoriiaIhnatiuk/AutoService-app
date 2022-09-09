@@ -4,13 +4,18 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name= "stuff")
-public class Stuff {
+@Table(name = "services")
+public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @OneToOne
+    private Master master;
+    @ManyToOne
+    private Order order;
     private BigDecimal price;
+    @OneToOne
+    private Status status;
     private boolean isDeleted;
 
     public Long getId() {
@@ -21,12 +26,20 @@ public class Stuff {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Master getMaster() {
+        return master;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMaster(Master master) {
+        this.master = master;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public BigDecimal getPrice() {
@@ -35,6 +48,14 @@ public class Stuff {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public boolean isDeleted() {
@@ -47,10 +68,12 @@ public class Stuff {
 
     @Override
     public String toString() {
-        return "Stuff{" +
+        return "Service{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", master=" + master +
+                ", order=" + order +
                 ", price=" + price +
+                ", status=" + status +
                 ", isDeleted=" + isDeleted +
                 '}';
     }
