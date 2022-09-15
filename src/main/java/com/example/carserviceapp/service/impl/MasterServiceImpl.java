@@ -41,6 +41,6 @@ public class MasterServiceImpl implements MasterService {
         Master masterToDelete = getMasterById(masterId);
         masterToDelete.setDeleted(true);
         masterRepository.save(masterToDelete);
-        return "Can't delete master with id " + masterId + " has been deleted successfully";
+        return "Master with id " + masterId + " has been deleted successfully";
     }
 }

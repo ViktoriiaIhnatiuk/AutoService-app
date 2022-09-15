@@ -1,7 +1,6 @@
 package com.example.carserviceapp.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "cars")
@@ -13,8 +12,6 @@ public class Car {
     private String model;
     private String stateNumber;
     private int year;
-    @OneToMany
-    private List<CarOwner> owners;
     private boolean isDeleted;
 
     public Long getId() {
@@ -57,14 +54,6 @@ public class Car {
         this.year = year;
     }
 
-    public List<CarOwner> getOwners() {
-        return owners;
-    }
-
-    public void setOwners(List<CarOwner> owners) {
-        this.owners = owners;
-    }
-
     public boolean isDeleted() {
         return isDeleted;
     }
@@ -81,7 +70,6 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", stateNumber='" + stateNumber + '\'' +
                 ", year=" + year +
-                ", owners=" + owners +
                 ", isDeleted=" + isDeleted +
                 '}';
     }

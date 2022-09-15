@@ -22,7 +22,6 @@ public class ServiceServiceImpl implements ServiceService {
 
     @Override
     public Service createService(Service service) {
-        service.setStatus(statusService.getStatusByName(toDoStatus));
         return serviceRepository.save(service);
     }
 

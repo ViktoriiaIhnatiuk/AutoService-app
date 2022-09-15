@@ -11,11 +11,12 @@ public class CarOwner {
     private Long id;
 
     private String name;
-    @OneToMany
+    @ManyToMany
     private List<Car> cars;
     @OneToMany
     private List<Order> orders;
-    private Long payedOrdersQuantity;
+    private Long payedOrdersQuantity = 0L;
+    private Long userId;
     private boolean isDeleted;
 
     public Long getId() {
@@ -58,6 +59,14 @@ public class CarOwner {
         this.payedOrdersQuantity = payedOrdersQuantity;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     public boolean isDeleted() {
         return isDeleted;
     }
@@ -73,8 +82,10 @@ public class CarOwner {
                 ", name=" + name +
                 ", cars=" + cars +
                 ", orders=" + orders +
-                ", isDeleted=" + isDeleted +
                 ", payedOrdersQuantity=" + payedOrdersQuantity +
+                ", userId=" + userId +
+                ", isDeleted=" + isDeleted +
+
                 '}';
     }
 }
