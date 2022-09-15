@@ -57,6 +57,7 @@ public class Status {
     }
 
     public enum StatusName {
+        PROJECT,
         ACCEPTED,
         TO_DO,
         IN_PROGRESS,

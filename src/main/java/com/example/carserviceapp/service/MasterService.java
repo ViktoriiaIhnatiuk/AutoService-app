@@ -10,5 +10,4 @@ public interface MasterService {
     Master getMasterById(Long masterId);
     Master updateMasterById(Long masterId);
     String deleteMasterById(Long masterId);
-
 }

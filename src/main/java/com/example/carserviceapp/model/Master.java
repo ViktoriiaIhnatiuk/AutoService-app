@@ -12,6 +12,9 @@ public class Master {
     private String name;
     @OneToMany
     private List<Order> finishedOrders;
+    @OneToMany
+    private List<Order> currentOrders;
+    private Long userId;
     private boolean isDeleted;
 
     public Long getId() {
@@ -36,6 +39,22 @@ public class Master {
 
     public void setFinishedOrders(List<Order> finishedOrders) {
         this.finishedOrders = finishedOrders;
+    }
+
+    public List<Order> getCurrentOrders() {
+        return currentOrders;
+    }
+
+    public void setCurrentOrders(List<Order> currentOrders) {
+        this.currentOrders = currentOrders;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public boolean isDeleted() {

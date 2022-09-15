@@ -21,7 +21,7 @@ public class Order {
     private List<Service> services;
     @OneToMany
     private List<Stuff> stuff;
-    private BigDecimal totalPrice;
+    private BigDecimal totalPrice = BigDecimal.ZERO;
     private LocalDateTime finishDate;
     @OneToOne
     private Status status;

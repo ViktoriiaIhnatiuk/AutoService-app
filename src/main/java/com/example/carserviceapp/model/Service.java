@@ -9,6 +9,7 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     @OneToOne
     private Master master;
     @ManyToOne
@@ -24,6 +25,14 @@ public class Service {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Master getMaster() {
@@ -70,6 +79,7 @@ public class Service {
     public String toString() {
         return "Service{" +
                 "id=" + id +
+                ", name=" + name +
                 ", master=" + master +
                 ", order=" + order +
                 ", price=" + price +
